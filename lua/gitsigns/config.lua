@@ -107,6 +107,7 @@ local validate = require('gitsigns.util').validate
 --- -- Undocumented
 --- @field _refresh_staged_on_update boolean
 --- @field _threaded_diff boolean
+--- @field git_command string
 --- @field _git_version string
 --- @field _verbose boolean
 --- @field _test_mode boolean
@@ -820,6 +821,14 @@ M.schema = {
     description = [[
       Enable GitHub integration. This allows the following features:
       • `:Gitsigns blame_line` will show PR numbers (with a hyperlink)
+    ]],
+  },
+
+  git_command = {
+    type = 'string',
+    default = 'git',
+    description = [[
+      Git command to use. Set to 'yadm' or 'yadme' for non-git VCS tools.
     ]],
   },
 

@@ -1,4 +1,5 @@
 local async = require('gitsigns.async')
+local config = require('gitsigns.config').config
 local log = require('gitsigns.debug.log')
 local util = require('gitsigns.util')
 
@@ -19,7 +20,7 @@ local function git_command(args, spec)
   end
 
   local cmd = {
-    'git',
+    config.git_command,
     '--no-pager',
     '--no-optional-locks',
     '--literal-pathspecs',
